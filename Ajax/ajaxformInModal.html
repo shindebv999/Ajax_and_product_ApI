@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <style>
+		form {
+          display: none;
+       }
+	</style>
+
+</head>
+<body>
+	
+<button id="button">open the dialog</button>
+<div id="dialog">
+
+</div>
+	<form id=" form" action="demo_form.asp" method="get">
+		<!-- First name:
+		<input type="text" name="fname">
+		Last name:
+		<input type="text" name="lname">
+		
+		<input type="submit" value="Submit"> -->
+	  </form>
+	  <script>
+		$("#button").click(function() {
+			$("form").dialog({
+				appendTo: '#dialog',
+				title: "Employee Data"
+			});
+			
+			    var label1=$("<label> FirstName:</label>");
+			    $(label1).css({"margin-bottom":"5px", "margin-top":"20px" , "display":"block"});
+				var input1=$("<input>");
+				$(input1).attr({"type":"text","placeholder":"Enter FirstName here"});
+				$(input1).css({"padding":"5px","background":"white","width":"230px"})
+
+				var label2=$("<label> LastName:</label>");
+				$(label2).css({"margin-bottom":"5px", "margin-top":"20px" , "display":"block"});
+				var input2=$("<input>");
+				$(input2).attr({"type":"text","placeholder":"Enter LastName here"});
+				$(input2).css({"padding":"5px","background":"white","width":"230px"})
+
+				var label3=$("<label> EmailID:</label>");
+				$(label3).css({"margin-bottom":"5px", "margin-top":"20px" , "display":"block"});
+				var input3=$("<input>");
+				$(input3).attr({"type":"email","placeholder":"Enter Email Id here"});
+				$(input3).css({"padding":"5px","background":"white","width":"230px"})
+
+				var label4=$("<label> Password:</label>");
+				$(label4).css({"margin-bottom":"5px", "margin-top":"20px" , "display":"block"});
+				var input4=$("<input>");
+				$(input4).attr({"type":"password","placeholder":"Enter Password here"});
+				$(input4).css({"padding":"5px","background":"white","width":"230px"})
+
+				var label5=$("<label> Address:</label>");
+				$(label5).css({"margin-bottom":"5px", "margin-top":"20px" , "display":"block"});
+				var input5=$("<textarea>");
+				$(input5).attr({"type":"text","rows":"5","cols":"20"});
+
+				var button=$("<button>Edit Profile</button>")
+			    $(button).css({"width":"200px", "margin-top":"10px" , "display":"block","padding":"10px","font-weight":"700"});
+
+				var button1=$("<button>Cansel</button>")
+			    $(button1).css({"width":"200px", "margin-top":"10px" , "display":"block","padding":"10px","font-weight":"700"});
+
+
+				$("form").append(label1);
+				$("form").append(input1);
+
+				$("form").append(label2);
+				$("form").append(input2);
+				$("form").append(label3);
+				$("form").append(input3);
+
+				$("form").append(label4);
+				$("form").append(input4);
+
+				$("form").append(label5);
+				$("form").append(input5);
+
+				$('form').append(button);
+				$('form').append(button1);
+     });
+	  </script>
+</body>
+</html>

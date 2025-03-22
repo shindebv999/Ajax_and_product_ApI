@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+    <link rel="stylesheet" type="text/css" href="AddProduct.css">
+
+
+  
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Include jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+<!-- Include Bootstrap JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+  <script type="text/javascript" src="AddProject.js"></script>
+    <title></title>
+</head>
+<body>
+<div class="container-fluid px-1 py-5 mx-auto">
+    <div class="row d-flex justify-content-center">
+        <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+            <h3>Add Product</h3>
+            <p class="blue-text">when a company with an established brand <br>introduces additional items in a product category.</p>
+            <div class="card">
+                <h5 class="text-center mb-4"> Add Product Form</h5>
+                <form  id="myForm" class="form-card" onsubmit="event.preventDefault()">
+                    <div class="row justify-content-center text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">ProductId<span class="text-danger"> *</span></label> <input type="text" id="ProductId" name="ProductId" placeholder="Enter your ProductId" onblur="validate(1)"> </div>
+                    </div>
+                     <div class="row justify-content-center text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">productName <span class="text-danger"> *</span></label> <input type="text" id="productName" name="productName" placeholder="Enter your productName" onblur="validate(2)"> </div>
+                    </div>
+                    <div class="row justify-content-center text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">ProductQuantity<span class="text-danger"> *</span></label> <input type="number" id="ProductQuantity" name="ProductQuantity" placeholder=" enter here  productquantity" onblur="validate(3)"> </div>
+                      
+                    </div>
+                          <div class="row justify-content-center text-left">
+                       <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">productPrice<span class="text-danger"> *</span></label> <input type="text" id="productPrice" name="productPrice" placeholder=" Enter here product Price" onblur="validate(4)"> </div>
+                   </div>
+                    <br><br>
+                    <div class="row justify-content-center">
+                        <div  id="addProductBtn" class="form-group col-sm-6"> <button type="submit" class="btn-block btn-primary"> Add Product</button> </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<!-- 
+$(document).ready(function() {
+    $("#updateProductBtn").click(function(e) {
+        e.preventDefault();
+
+        // Collect form data
+        var updateData = {
+            productId: $("#updateProductId").val(),
+            newProductName: $("#newProductName").val(),
+            // Add fields for other data to update as needed
+        };
+
+        // Send a PUT request to your Spring Boot backend for updating
+        $.ajax({
+            type: "PUT",
+            url: "/api/your-entity/update", // Update this URL to your actual update endpoint
+            contentType: "application/json",
+            data: JSON.stringify(updateData),
+            success: function(data) {
+                alert("Product updated successfully!");
+                // Clear the form or perform any other actions
+            },
+            error: function(error) {
+                console.error("Error updating product: " + JSON.stringify(error));
+            }
+        });
+    });
+});
+ -->

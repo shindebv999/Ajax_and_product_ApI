@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<button onclick="run()" >click me</button>
+	
+<script type="text/javascript">
+	function run() {
+
+	// Creating Our XMLHttpRequest object
+	let xhr = new XMLHttpRequest();
+
+	// Making our connection
+	let url = 'http://localhost:8081/product';
+	xhr.open("GET", url, true);
+
+	// function execute after request is successful
+	xhr.onreadystatechange = function () {
+		if (this.readyState == 4 && this.status == 200) {
+			console.log(this.responseText);
+		}
+	}
+	// Sending our request
+	xhr.send();
+}
+run();
+</script>
+
+</body>
+</html>

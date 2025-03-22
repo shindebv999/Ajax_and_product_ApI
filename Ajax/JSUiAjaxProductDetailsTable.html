@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <button id="productdata">View Product Info</button>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>productId</th>
+                <th>productName</th>
+                <th>productPrice</th>
+                <th>productQuantity</th>
+            </tr>
+        </thead>
+        <tbody id="data">
+        </tbody>
+    </table>
+    <script>
+        $(document).ready(function(){
+            $("#productdata").click(function(){
+                $.ajax({
+                    url: "http://localhost:8081/product",
+                    type: "GET",
+                    dataType: "json", // Specify the data type expected from the server
+                    success: function(result){
+                        // Clear the existing table data
+                        $("#data").empty();
+                        $.each(result, function(index, value) {
+                            $("#data").append(
+                                `<tr>
+                                    <td>${value.productId}</td>
+                                    <td>${value.productName}</td>
+                                    <td>${value.productPrice}</td>
+                                    <td>${value.productQuantity}</td>
+                                </tr>`
+                            );
+                        });
+                    },
+                    error: function(xhr, status, error){
+                        alert("An error occurred: " + error);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

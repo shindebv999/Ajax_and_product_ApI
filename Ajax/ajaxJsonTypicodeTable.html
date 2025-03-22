@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+   
+</head>
+<body>
+    <button id="button">View Student Info</button>
+    <table border="1">
+        <thead>
+            <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Mobile</th>
+            <th>Email</th>
+        </tr>
+        </thead>
+        <tbody id="data">
+
+        </tbody>
+    </table>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+    $.ajax(
+        {
+            url: "https://jsonplaceholder.typicode.com/users",
+            type:"GET",
+
+             success: function(result){
+               // alert("success"); 
+       
+            $.each(result,function(index,info)
+            {
+                $("#data").append(
+        
+                       ` <tr>
+                            <td>${info.id}</td>
+                            <td>${info.name}</td>
+                            <td>${info.phone}</td>
+                            <td>${info.email}</td>
+                        </tr>`
+                    
+                )
+            });
+        },
+        error:function(result){
+            alert("error");
+        }
+    });
+});
+});
+</script>
+</body>
+</html> 
